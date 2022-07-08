@@ -1,0 +1,6 @@
+wxpay:
+  appId: wxb709cf6e6a7d9d2a
+  appSecret: d9a9ff00a633cd7353a8925119063b01
+  mchId: 1473426802
+  partnerKey: T6m9iK73b0kn9g5v426MKfHQH7X8rKwb
+  notifyUrl: https://lkd2-java.itheima.net/api/order-service/wxpay/payNotify

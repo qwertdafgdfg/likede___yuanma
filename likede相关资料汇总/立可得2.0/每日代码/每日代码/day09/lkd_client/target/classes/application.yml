@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: lkd-client
+  datasource:
+    url: jdbc:h2:~/lkd
+    driver-class-name: org.h2.Driver
+    #schema: classpath:db/schema-h2.sql
+    username: root
+    password: test
+  h2:
+    console:
+      path: /h2-console  #h2嵌入式数据库控制台
+      enabled: true
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#emq 访问端口
+emq:
+  mqttServerUrl: tcp://192.168.200.128:1883
+  mqttPassword: 123456
+  innerCode: "01000001"  #当前设备编号
+  publisTopicPrefix: server/${emq.innerCode}/  #发送消息消息
+  clientId: 1234501000001
+  subscribeTopic: vm/tovm/${emq.innerCode}  #监听服务器通知队列
+#web 访问端口
+server:
+  port: 9093
+

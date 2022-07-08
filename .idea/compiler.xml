@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service_common" />
+        <module name="lkd_microapp" />
+        <module name="lkd_gate_way" />
+        <module name="lkd_gateway_microapp" />
+        <module name="lkd_order_service" />
+        <module name="lkd_production_service" />
+        <module name="lkd_vms_service" />
+        <module name="lkd_status_service" />
+        <module name="lkd_user_service" />
+        <module name="lkd_common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="lkd_common" target="11" />
+      <module name="lkd_gate_way" target="11" />
+      <module name="lkd_gateway_microapp" target="11" />
+      <module name="lkd_microapp" target="11" />
+      <module name="lkd_order_service" target="11" />
+      <module name="lkd_parent" target="11" />
+      <module name="lkd_production_service" target="11" />
+      <module name="lkd_service" target="11" />
+      <module name="lkd_status_service" target="11" />
+      <module name="lkd_user_service" target="11" />
+      <module name="lkd_vms_service" target="11" />
+      <module name="service_common" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="lkd_common" options="-parameters" />
+      <module name="lkd_gate_way" options="-parameters" />
+      <module name="lkd_gateway_microapp" options="-parameters" />
+      <module name="lkd_microapp" options="-parameters" />
+      <module name="lkd_order_service" options="-parameters" />
+      <module name="lkd_production_service" options="-parameters" />
+      <module name="lkd_status_service" options="-parameters" />
+      <module name="lkd_user_service" options="-parameters" />
+      <module name="lkd_vms_service" options="-parameters" />
+      <module name="service_common" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,41 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+    consul:
+      retry:
+        enabled: true
+        initial-interval: 10000
+        max-interval: 15000
+        max-attempts: 99999999
+      discovery:
+        service-name: ${spring.application.name}
+        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        prefer-ip-address: true
+        health-check-interval: 10s
+        enabled: true
+        register: true
+        health-check-critical-timeout: 2m #2分钟之后健康检查未通过取消注册
+      host:  192.168.200.128
+      port: 8500
+      config:
+        enabled: true
+        format: yaml
+        prefix: config
+#        default-context: common
+        data-key: data
+        fail-fast: true
+        watch:
+          enabled: true
+          wait-time: 55
+          delay: 5000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000

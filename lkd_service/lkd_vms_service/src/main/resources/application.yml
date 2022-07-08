@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: vm-service
+
+server:
+  port: 9004
+
+#  rabbitmq:
+#    host: 47.92.101.139
+#    port: 5672
+#    username: guest
+#    password: guest
+#    listener:
+#      simple:
+#        acknowledge-mode: manual  #消息接收确认
+#        concurrency: 5 #节点最小消费者数量
+#        max-concurrency: 50 #节点最大消费者数量
+#        retry:
+#          enabled: true #消息重试
+#    publisher-returns: true #消息发送失败返回
+#xxl:
+#  job:
+#    accessToken:
+#    admin:
+#      addresses: http://172.16.43.155:8080/xxl-job-admin
+#
+#    executor:
+#      appname: vm-service
+#      address:
+#      ip:
+#      port: 9980
+#      logretentiondays: 30

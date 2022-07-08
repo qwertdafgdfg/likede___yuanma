@@ -1,0 +1,103 @@
+version: "2"
+services:
+  #后台服务
+  xxl-job:
+    build: xxl-job
+    container_name: xxl-job
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+
+  #售货机服务
+  vm-service:
+    build: vm
+    container_name: vm-service
+    expose:
+      - "9004"
+    ports:
+      - "9004:9004"
+    volumes: 
+      - /root/common/log:/logs
+    privileged: true
+
+  #订单服务
+  order-service:
+    build: order
+    container_name: order-service
+    expose:
+      - "9008"
+    ports:
+      - "9008:9008"
+    volumes: 
+      - /root/common/log:/logs
+    privileged: true
+
+  #工单服务
+  task-service:
+    build: task
+    container_name: task-service
+    expose:
+      - "9005"
+    ports:
+      - "9005:9005"
+    volumes: 
+      - /root/common/log:/logs
+    privileged: true
+  #用户服务
+  user-service:
+    build: user
+    container_name: user-service
+    expose:
+      - "9006"
+    ports:
+      - "9006:9006"
+    volumes: 
+      - /root/common/log:/logs
+    privileged: true
+
+  #状态服务
+  status-service:
+    build: status
+    container_name: status-service
+    expose:
+      - "9003"
+    ports:
+      - "9003:9003"
+    volumes: 
+      - /root/common/log:/logs
+    privileged: true
+
+  #小程序
+  microapp:
+    build: microapp
+    container_name: microapp
+    expose:
+      - "9009"
+    ports:
+      - "9009:9009"
+    volumes: 
+      - /root/common/log:/logs
+    privileged: true
+
+  #小程序网关
+  microapp-gateway:
+    build: microapp-gateway
+    expose:
+      - "9010"
+    ports:
+      - "9010:9010"
+    volumes: 
+      - /root/common/log:/logs
+    privileged: true
+
+  #后台网关
+  gateway:
+    build: gateway
+    expose:
+      - "9007"
+    ports:
+      - "9007:9007"
+    volumes: 
+      - /root/common/log:/logs
+    privileged: true

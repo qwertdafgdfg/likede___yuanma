@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: gateway-service
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: false
+#          filters:
+#
+#      routes:
+#      - id: deny
+#        uri: lb://userService
+#        predicates:
+#        - Path=/**/auth/**,/auth/**
+#        filters:
+#        - RewritePath=/userService/user/login
+#        #- RewritePath=lb://userService/user/login
+#
+#      #售货机服务
+#      - id: vm-service
+#        uri: lb://vm-service
+#        predicates:
+#        - Path=/vmService/**
+#        filters:
+#        - StripPrefix= 1
+#
+#      #用户服务
+#      - id: user-service
+#        uri: lb://user-service
+#        predicates:
+#        - Path=/userService/**
+#        filters:
+#        - StripPrefix= 1
+#
+#      #订单服务
+#      - id: orderService
+#        uri: lb://orderService
+#        predicates:
+#          - Path=/orderService/**
+#        filters:
+#          - StripPrefix= 1
+#
+#      #状态服务
+#      - id: statusService
+#        uri: lb://statusService
+#        predicates:
+#          - Path=/statusService/**
+#        filters:
+#          - StripPrefix= 1
+#
+#        #状态服务
+#      - id: taskService
+#        uri: lb://taskService
+#        predicates:
+#          - Path=/taskService/**
+#        filters:
+#          - StripPrefix= 1
+server:
+  port: 9007

@@ -1,0 +1,5 @@
+server:
+  port: 8991
+spring:
+  application:
+    name: emq-demo

@@ -1,0 +1,83 @@
+spring:
+  application:
+    name: production-service
+  datasource:
+    url: jdbc:mysql://47.92.101.139:3306/lkd_production?useUnicode=true&autoReconnect=true&autoReconnectForPools=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root123
+    driver-class-name: com.mysql.jdbc.Driver
+
+  cloud:
+    consul:
+      discovery:
+        service-name: ${spring.application.name}
+        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        prefer-ip-address: true
+        health-check-interval: 10s
+        enabled: true
+        register: true
+        health-check-critical-timeout: 2m #2分钟之后健康检查未通过取消注册
+      host: 47.92.101.139
+      port: 8500
+#      config:
+#        enabled: true
+#        format: yaml
+#        prefix: config
+#        default-context: vmConfig
+#        data-key: data
+#        fail-fast: true
+#        watch:
+#          enabled: true
+#          wait-time: 55
+#          delay: 5000
+
+  rabbitmq:
+    host: 47.92.101.139
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        acknowledge-mode: manual  #消息接收确认
+        concurrency: 5 #节点最小消费者数量
+        max-concurrency: 50 #节点最大消费者数量
+        retry:
+          enabled: true #消息重试
+    publisher-returns: true #消息发送失败返回
+#  zipkin:
+#    base-url: http://127.0.0.1:9411/ # zipkin服务器的地址
+#    discovery-client-enabled: false  # 关闭服务发现，否则Spring Cloud会把zipkin的url当做服务名称
+#  sleuth:
+#    sampler:
+#      probability: 1 # 设置抽样采集率为100%，默认为0.1，即10%
+#
+  redis:
+    host: 47.92.101.139
+    port: 6379
+    database: 0
+    lettuce:
+      pool:
+        max-active: 10
+        max-wait: -1
+        max-idle: 5
+        min-idle: 1
+      shutdown-timeout: 100
+    timeout: 1000
+    password:
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #log-impl: org.apache.ibatis.logging.slf4j.Slf4jLoggerImpl
+
+server:
+  port: 9005
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

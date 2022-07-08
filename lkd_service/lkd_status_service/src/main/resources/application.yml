@@ -1,0 +1,59 @@
+spring:
+  application:
+    name: status-service
+#  datasource:
+#    url: ${db.statusDbUrl}
+#    username: ${db.username}
+#    password: ${db.password}
+#    driver-class-name: com.mysql.jdbc.Driver
+
+#  rabbitmq:
+#    host: ${rabbitmq.host}
+#    port: ${rabbitmq.port}
+#    username: ${rabbitmq.username}
+#    password: ${rabbitmq.password}
+#    listener:
+#      simple:
+#        acknowledge-mode: manual  #消息接收确认
+#        concurrency: 5 #节点最小消费者数量
+#        max-concurrency: 50 #节点最大消费者数量
+#        retry:
+#          enabled: true #消息重试
+#    publisher-returns: true #消息发送失败返回
+#    publisher-returns: true #消息发送失败返回
+#  zipkin:
+#    base-url: http://127.0.0.1:9411/ # zipkin服务器的地址
+#    discovery-client-enabled: false  # 关闭服务发现，否则Spring Cloud会把zipkin的url当做服务名称
+#  sleuth:
+#    sampler:
+#      probability: 1 # 设置抽样采集率为100%，默认为0.1，即10%
+#
+#  redis:
+#    host: ${redis.host}
+#    port: ${redis.port}
+#    database: 0
+#    lettuce:
+#      pool:
+#        max-active: 10
+#        max-wait: -1
+#        max-idle: 5
+#        min-idle: 1
+#      shutdown-timeout: 100
+#    timeout: 1000
+#    password: ${redis.password}
+
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+server:
+  port: 9003
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#  endpoint:
+#    health:
+#      show-details: always

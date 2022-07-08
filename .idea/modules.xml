@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lkd_common/lkd_common.iml" filepath="$PROJECT_DIR$/lkd_common/lkd_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lkd_service/lkd_gate_way/lkd_gate_way.iml" filepath="$PROJECT_DIR$/lkd_service/lkd_gate_way/lkd_gate_way.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lkd_service/lkd_gateway_microapp/lkd_gateway_microapp.iml" filepath="$PROJECT_DIR$/lkd_service/lkd_gateway_microapp/lkd_gateway_microapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lkd_service/lkd_microapp/lkd_microapp.iml" filepath="$PROJECT_DIR$/lkd_service/lkd_microapp/lkd_microapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lkd_service/lkd_order_service/lkd_order_service.iml" filepath="$PROJECT_DIR$/lkd_service/lkd_order_service/lkd_order_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lkd_parent.iml" filepath="$PROJECT_DIR$/lkd_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lkd_service/lkd_production_service/lkd_production_service.iml" filepath="$PROJECT_DIR$/lkd_service/lkd_production_service/lkd_production_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lkd_service/lkd_service.iml" filepath="$PROJECT_DIR$/lkd_service/lkd_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lkd_service/lkd_status_service/lkd_status_service.iml" filepath="$PROJECT_DIR$/lkd_service/lkd_status_service/lkd_status_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lkd_service/lkd_user_service/lkd_user_service.iml" filepath="$PROJECT_DIR$/lkd_service/lkd_user_service/lkd_user_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lkd_service/lkd_vms_service/lkd_vms_service.iml" filepath="$PROJECT_DIR$/lkd_service/lkd_vms_service/lkd_vms_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lkd_service/service_common/service_common.iml" filepath="$PROJECT_DIR$/lkd_service/service_common/service_common.iml" />
+    </modules>
+  </component>
+</project>

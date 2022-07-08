@@ -1,0 +1,59 @@
+spring:
+  application:
+    name: vms-service
+  datasource:
+    url: jdbc:mysql://47.92.101.139:3306/lkd_vms?useUnicode=true&autoReconnect=true&autoReconnectForPools=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
+#    listener:
+#      simple:
+#        acknowledge-mode: manual  #消息接收确认
+#        concurrency: 5 #节点最小消费者数量
+#        max-concurrency: 50 #节点最大消费者数量
+#        retry:
+#          enabled: true #消息重试
+#    publisher-returns: true #消息发送失败返回
+#  zipkin:
+#    base-url: http://127.0.0.1:9411/ # zipkin服务器的地址
+#    discovery-client-enabled: false  # 关闭服务发现，否则Spring Cloud会把zipkin的url当做服务名称
+#  sleuth:
+#    sampler:
+#      probability: 1 # 设置抽样采集率为100%，默认为0.1，即10%
+#
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    database: 0
+#    lettuce:
+#      pool:
+#        max-active: 10
+#        max-wait: -1
+#        max-idle: 5
+#        min-idle: 1
+#      shutdown-timeout: 100
+#    timeout: 1000
+#    password:
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #log-impl: org.apache.ibatis.logging.slf4j.Slf4jLoggerImpl
+
+server:
+  port: 9001
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#  endpoint:
+#    health:
+#      show-details: always
