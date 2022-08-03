@@ -8,6 +8,7 @@ import com.lkd.service.ChannelService;
 import com.lkd.service.PolicyService;
 import com.lkd.viewmodel.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,8 +19,10 @@ import java.util.Map;
 public class ChannelController {
 
     @Autowired
+    @Lazy
     private ChannelService channelService;
     @Autowired
+    @Lazy
     private PolicyService policyService;
 
 

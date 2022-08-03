@@ -2,6 +2,7 @@ package com.lkd.http.controller;
 import com.lkd.entity.TaskStatusTypeEntity;
 import com.lkd.service.TaskStatusTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 public class TaskStatusTypeController {
 
     @Autowired
+    @Lazy
     private TaskStatusTypeService taskStatusTypeService;
 
     /**

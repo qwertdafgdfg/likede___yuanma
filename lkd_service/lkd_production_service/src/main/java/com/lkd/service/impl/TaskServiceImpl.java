@@ -45,7 +45,7 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
-@Service
+@Service("taskService")
 @Slf4j
 public class TaskServiceImpl extends ServiceImpl<TaskDao,TaskEntity> implements TaskService{
     @Autowired

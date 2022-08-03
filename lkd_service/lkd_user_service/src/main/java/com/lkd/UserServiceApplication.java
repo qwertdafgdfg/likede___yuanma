@@ -1,5 +1,6 @@
 package com.lkd;
 
+import io.sentry.Sentry;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -17,10 +18,12 @@ import org.springframework.web.servlet.HandlerExceptionResolver;
 @EnableTransactionManagement
 @SpringBootApplication
 public class UserServiceApplication {
+
     @Bean
     public HandlerExceptionResolver sentryExceptionResolver() {
         return new io.sentry.spring.SentryExceptionResolver();
     }
+
     public static void main(String[] args) {
 //        Sentry.init("https://38ddc9b80c144435bd5feeccf4d93078@sentry.itheima.net/14");
         SpringApplication.run( UserServiceApplication.class, args);

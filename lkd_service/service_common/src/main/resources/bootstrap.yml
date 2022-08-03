@@ -19,7 +19,7 @@ spring:
         enabled: true
         register: true
         health-check-critical-timeout: 2m #2分钟之后健康检查未通过取消注册
-      host:  192.168.200.128
+      host: 192.168.200.128
       port: 8500
       config:
         enabled: true
@@ -39,3 +39,17 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
+#mqtt:
+#  client:
+#    username: admin
+#    password: public
+#    serverURI: tcp://192.168.138.136:1883
+#    clientId: monitor.task.${random.int[1000,9999]}
+#    keepAliveInterval: 10 #连接保持检查周期
+#    connectionTimeout: 30 #连接超时时间
+#  producer:
+#    defaultQos: 2 #消息质量
+#    defaultRetained: false #是否是保留消息
+#    defaultTopic: topic/test1 #默认主题
+#  consumer:
+#    consumerTopics: $/queue/server/task/supply,$share/task/server/status

@@ -40,4 +40,9 @@ public class UserServiceImplTest {
         String pwd = BCrypt.hashpw("admin",BCrypt.gensalt());
         System.out.println(pwd);
     }
+
+    public static void main(String[] args) {
+        String pwd = BCrypt.hashpw("admin",BCrypt.gensalt());
+        System.out.println(pwd);
+    }
 }

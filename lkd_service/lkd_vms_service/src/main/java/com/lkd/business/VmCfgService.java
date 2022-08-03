@@ -12,6 +12,7 @@ import com.lkd.service.VendingMachineService;
 import com.lkd.service.VmCfgVersionService;
 import com.lkd.viewmodel.SkuViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -19,12 +20,16 @@ import java.util.List;
 @Component
 public class VmCfgService{
     @Autowired
+    @Lazy
     private VendingMachineService vmService;
     @Autowired
+    @Lazy
     private VmCfgVersionService versionService;
     @Autowired
+    @Lazy
     private ChannelService channelService;
     @Autowired
+    @Lazy
     private SkuService skuService;
 
     public ChannelCfg getChannelCfg(String innerCode){

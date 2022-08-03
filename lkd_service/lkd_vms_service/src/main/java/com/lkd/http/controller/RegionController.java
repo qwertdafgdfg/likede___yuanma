@@ -6,12 +6,14 @@ import com.lkd.service.RegionService;
 import com.lkd.viewmodel.Pager;
 import com.lkd.viewmodel.RegionViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/region")
 public class RegionController {
     @Autowired
+    @Lazy
     private RegionService regionService;
 
     /**

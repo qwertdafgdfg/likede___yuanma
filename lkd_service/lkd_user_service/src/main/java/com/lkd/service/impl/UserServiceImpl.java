@@ -231,15 +231,13 @@ public class UserServiceImpl extends ServiceImpl<UserDao,UserEntity> implements 
     private LoginResp adminLogin(LoginReq req) throws IOException {
         LoginResp resp = new LoginResp();
         resp.setSuccess(false);
+        //通过客户端的token作为key，拿到图片验证码的。
         String code =redisTemplate.boundValueOps(req.getClientToken()).get();
-        if(Strings.isNullOrEmpty(code)){
+        if(Strings.isNullOrEmpty(code) ||(!req.getCode().equals(code))){
             resp.setMsg("验证码错误");
             return resp;
         }
-        if(!req.getCode().equals(code)){
-            resp.setMsg("验证码错误");
-            return resp;
-        }
+
         QueryWrapper<UserEntity> qw = new QueryWrapper<>();
         qw.lambda()
                 .eq(UserEntity::getLoginName,req.getLoginName());
@@ -253,6 +251,7 @@ public class UserServiceImpl extends ServiceImpl<UserDao,UserEntity> implements 
             resp.setMsg("账户名或密码错误");
             return resp;
         }
+
         return okResp(userEntity,VMSystem.LOGIN_ADMIN);
     }
 
@@ -275,7 +274,7 @@ public class UserServiceImpl extends ServiceImpl<UserDao,UserEntity> implements 
         tokenObject.setUserId(userEntity.getId());
         //tokenObject.setUserName("测试");
         tokenObject.setMobile(userEntity.getMobile());
-        tokenObject.setLoginType(loginType);
+        tokenObject.setLoginType(loginType);   //管理员，运维人员，供应商登录具体是从哪个端口登录？
         String token = JWTUtil.createJWTByObj(tokenObject,userEntity.getMobile() + VMSystem.JWT_SECRET);
         resp.setToken(token);
         return resp;

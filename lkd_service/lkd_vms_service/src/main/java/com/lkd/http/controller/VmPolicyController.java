@@ -2,6 +2,7 @@ package com.lkd.http.controller;
 import com.lkd.entity.VmPolicyEntity;
 import com.lkd.service.VmPolicyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class VmPolicyController {
 
     @Autowired
+    @Lazy
     private VmPolicyService vmPolicyService;
 
     /**

@@ -1,7 +1,7 @@
 [toc]
 # 物联网亿万级通信一站式解决方案EMQ
 
-![image-20220706111827664](D:\JavaProject\houduan000002\github-java-source\likede___yuanma\likede相关资料汇总\立可得2.0\讲义\day00\images\image-20220706111827664.png)
+![image-20220706111827664](D:\JavaProject\houduan000002\github-java-source\likede___yuanma\likede___yuanma\likede相关资料汇总\立可得2.0\讲义\day00\images\image-20220706111827664.png)
 
 ## 1. MQTT
 
@@ -492,7 +492,7 @@ s4、s5  以群组方式订阅主题  $share/g2/topic
 
 通过emq的websocket工具发送消息到主题  topic，此时g1和g2分别会有一个订阅者会收到消息。（g1和g2就是两个组了。）
 
-![image-20220704151345541](D:\www---视频游泳\尚医通\heima\06、立可得资料\讲义\day00\images\image-20220704151345541.png)
+![image-20220704151345541](D:\JavaProject\houduan000002\github-java-source\likede___yuanma\likede___yuanma\likede相关资料汇总\立可得2.0\讲义\day00\images\image-20220704151345541.png)
 
 ![](images/0-1.png)
 
@@ -538,7 +538,7 @@ module.subscription.<number>.qos = <qos>
 
 * 3、client/%c      会自动的将%c替换为客户端的Client ID       、 消息的发送端主题（Topic）必须是client/   clientID ，  相应的客户端client才能接受到广播发来的信息。。client/mqttjs_7b6be8c116
 
-  ![image-20220704164330213](D:\www---视频游泳\尚医通\heima\06、立可得资料\讲义\day00\images\image-20220704164330213.png)
+  ![image-20220704164330213](D:\JavaProject\houduan000002\github-java-source\likede___yuanma\likede___yuanma\likede相关资料汇总\立可得2.0\讲义\day00\images\image-20220704164330213.png)
 
 ```properties
 module.subscription.1.topic = client/%c    

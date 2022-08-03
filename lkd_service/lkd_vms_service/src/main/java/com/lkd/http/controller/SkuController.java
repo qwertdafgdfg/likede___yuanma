@@ -12,6 +12,7 @@ import com.lkd.viewmodel.Pager;
 import com.lkd.viewmodel.SkuViewModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,10 +26,13 @@ import java.util.function.Function;
 public class SkuController {
     private String folder = "image";
     @Autowired
+    @Lazy
     private SkuService skuService;
     @Autowired
+    @Lazy
     private FileManager fileManager;
     @Autowired
+    @Lazy
     private OrderService orderService;
 
     /**

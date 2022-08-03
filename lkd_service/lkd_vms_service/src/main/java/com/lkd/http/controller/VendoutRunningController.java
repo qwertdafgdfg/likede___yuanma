@@ -3,6 +3,7 @@ import com.lkd.entity.VendoutRunningEntity;
 import com.lkd.service.VendoutRunningService;
 import com.lkd.viewmodel.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.Map;
 public class VendoutRunningController {
 
     @Autowired
+    @Lazy
     private VendoutRunningService vendoutRunningService;
 
     /**

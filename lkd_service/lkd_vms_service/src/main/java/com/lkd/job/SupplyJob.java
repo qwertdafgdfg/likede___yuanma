@@ -11,6 +11,7 @@ import com.xxl.job.core.log.XxlJobLogger;
 import com.xxl.job.core.util.ShardingUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -20,9 +21,11 @@ import java.util.List;
 public class SupplyJob {
 
     @Autowired
+    @Lazy
     private VendingMachineService vmService;
 
     @Autowired
+    @Lazy
     private TaskService taskService;
 
     /**

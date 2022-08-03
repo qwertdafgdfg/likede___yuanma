@@ -11,6 +11,7 @@ import com.lkd.service.TaskService;
 import com.xxl.job.core.biz.model.ReturnT;
 import com.xxl.job.core.handler.annotation.XxlJob;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -20,9 +21,11 @@ public class TaskCollectJob {
 
 
     @Autowired
+    @Lazy
     private TaskService taskService;
 
     @Autowired
+    @Lazy
     private TaskCollectService taskCollectService;
 
     /**

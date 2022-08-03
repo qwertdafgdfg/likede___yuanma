@@ -10,14 +10,20 @@ import com.lkd.viewmodel.Pager;
 import com.lkd.viewmodel.PartnerViewModel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/partner")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class PartnerController {
-    private final PartnerService partnerService;
-    private final VMService vmService;
+    @Autowired
+    @Lazy
+    private  PartnerService partnerService;
+    @Autowired
+    @Lazy
+    private  VMService vmService;
 
     /**
      * 新增

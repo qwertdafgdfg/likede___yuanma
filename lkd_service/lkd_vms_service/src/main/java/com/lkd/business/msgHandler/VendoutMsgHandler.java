@@ -10,6 +10,7 @@ import com.lkd.service.VendingMachineService;
 import com.lkd.utils.DistributedLock;
 import com.lkd.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +24,7 @@ import java.io.IOException;
 public class VendoutMsgHandler implements MsgHandler{
 
     @Autowired
+    @Lazy
     private VendingMachineService vmService;
 
     @Autowired

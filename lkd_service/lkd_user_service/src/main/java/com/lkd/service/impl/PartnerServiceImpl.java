@@ -23,21 +23,29 @@ import com.lkd.viewmodel.Pager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
+/**
+ * @author 61941
+ */
 @Slf4j
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class PartnerServiceImpl extends ServiceImpl<PartnerDao, PartnerEntity> implements PartnerService {
-    private final RedisTemplate<String,String> redisTemplate;
+    @Autowired
+    @Lazy
+    private RedisTemplate<String,String> redisTemplate;
 
 //    @Autowired
 //    private MqttProducer mqttProducer;
-
-    private final VMService vmService;
+@Autowired
+@Lazy
+    private VMService vmService;
     @Override
     public LoginResp login(LoginReq req) throws IOException {
         LoginResp resp = new LoginResp();
@@ -74,7 +82,7 @@ public class PartnerServiceImpl extends ServiceImpl<PartnerDao, PartnerEntity> i
         TokenObject tokenObject = new TokenObject();
         tokenObject.setUserId(partnerEntity.getId());
         //tokenObject.setUserName(partnerEntity.getName());
-        tokenObject.setLoginType(VMSystem.LOGIN_EMP);
+        tokenObject.setLoginType(VMSystem.LOGIN_PARTNER);
         tokenObject.setMobile(partnerEntity.getMobile());
         String token = JWTUtil.createJWTByObj(tokenObject,partnerEntity.getMobile() + VMSystem.JWT_SECRET);
         resp.setToken(token);

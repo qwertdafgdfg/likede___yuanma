@@ -8,6 +8,7 @@ import com.lkd.http.viewModel.PolicyReq;
 import com.lkd.viewmodel.*;
 import com.lkd.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,20 +18,26 @@ import java.util.List;
 public class VendingMachineController {
 
     @Autowired
+    @Lazy
     private VendingMachineService vendingMachineService;
 
     @Autowired
+    @Lazy
     private PolicyService policyService;
 
     @Autowired
+    @Lazy
     private ChannelService channelService;
 
     @Autowired
+    @Lazy
     private VmTypeService vmTypeService;
 
     @Autowired
+    @Lazy
     private RegionService regionService;
     @Autowired
+    @Lazy
     private BusinessTypeService businessTypeService;
 
 

@@ -9,6 +9,7 @@ import com.lkd.service.NodeService;
 import com.lkd.utils.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -21,6 +22,7 @@ import java.io.IOException;
 @ProcessType(value = "partnerUpdate")
 public class PartnerUpdateHandler implements MsgHandler {
     @Autowired
+    @Lazy
     private NodeService nodeService;
     @Override
     public void process(String jsonMsg) throws IOException {

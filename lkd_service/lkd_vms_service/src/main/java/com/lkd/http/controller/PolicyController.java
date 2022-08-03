@@ -5,6 +5,7 @@ import com.lkd.exception.LogicException;
 import com.lkd.service.PolicyService;
 import com.lkd.viewmodel.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
 public class PolicyController {
 
     @Autowired
+    @Lazy
     private PolicyService policyService;
 
     /**

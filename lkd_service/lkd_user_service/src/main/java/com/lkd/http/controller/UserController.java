@@ -17,6 +17,7 @@ import com.lkd.viewmodel.VendingMachineViewModel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,15 +35,24 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/user")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Slf4j
 public class UserController {
-    private final UserService userService;
-    private final RoleService roleService;
-    private final VMService vmService;
-    private final DefaultKaptcha kaptcha;
+    @Autowired
+    @Lazy
+    private  UserService userService;
+    @Autowired
+    @Lazy
+    private  RoleService roleService;
+    @Autowired
+    @Lazy
+    private  VMService vmService;
+    @Autowired
+    @Lazy
+    private  DefaultKaptcha kaptcha;
 
     @Autowired
+    @Lazy
     private RedisTemplate<String,String> redisTemplate;
 
     /**

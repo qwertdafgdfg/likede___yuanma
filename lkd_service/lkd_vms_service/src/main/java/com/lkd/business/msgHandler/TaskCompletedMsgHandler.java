@@ -10,6 +10,7 @@ import com.lkd.utils.JsonUtil;
 import com.lkd.viewmodel.VMDistance;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -22,6 +23,7 @@ import java.io.IOException;
 public class TaskCompletedMsgHandler implements MsgHandler {
 
     @Autowired
+    @Lazy
     private VendingMachineService vmService;//售货机服务
 
 

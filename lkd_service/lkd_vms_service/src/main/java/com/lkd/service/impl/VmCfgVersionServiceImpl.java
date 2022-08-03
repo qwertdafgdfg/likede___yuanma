@@ -9,11 +9,13 @@ import com.lkd.entity.VmCfgVersionEntity;
 import com.lkd.service.VendingMachineService;
 import com.lkd.service.VmCfgVersionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 @Service
 public class VmCfgVersionServiceImpl extends ServiceImpl<VmCfgVersionDao,VmCfgVersionEntity> implements VmCfgVersionService{
     @Autowired
+    @Lazy
     private VendingMachineService vmService;
 
     @Override

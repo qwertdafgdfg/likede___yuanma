@@ -5,6 +5,7 @@ import com.lkd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CacheConfig(cacheNames = "auth")
 public class AuthenticationController{
     @Autowired
+    @Lazy
     private UserService userService;
 
     @Cacheable(cacheNames = "user",key = "targetClass + methodName + #p0")

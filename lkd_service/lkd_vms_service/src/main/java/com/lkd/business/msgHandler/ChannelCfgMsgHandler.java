@@ -13,6 +13,7 @@ import com.lkd.service.VendingMachineService;
 import com.lkd.service.VmCfgVersionService;
 import com.lkd.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -25,10 +26,13 @@ import java.util.List;
 @ProcessType(value = "channelCfgReq")
 public class ChannelCfgMsgHandler implements MsgHandler{
     @Autowired
+    @Lazy
     private VmCfgVersionService versionService;
     @Autowired
+    @Lazy
     private VendingMachineService vmService;
     @Autowired
+    @Lazy
     private MqttProducer mqttProducer;
     @Override
     public void process(String jsonMsg) throws IOException {

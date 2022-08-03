@@ -7,6 +7,7 @@ import com.lkd.service.*;
 import com.lkd.viewmodel.Pager;
 import com.lkd.viewmodel.UserWork;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,12 +21,16 @@ import java.util.List;
 @RequestMapping("/task")
 public class TaskController extends  BaseController{
     @Autowired
+    @Lazy
     private TaskService taskService;
     @Autowired
+    @Lazy
     private TaskDetailsService taskDetailsService;
     @Autowired
+    @Lazy
     private TaskTypeService taskTypeService;
     @Autowired
+    @Lazy
     private JobService jobService;
 
 
@@ -216,6 +221,7 @@ public class TaskController extends  BaseController{
 
 
     @Autowired
+    @Lazy
     private TaskCollectService taskCollectService;
 
 

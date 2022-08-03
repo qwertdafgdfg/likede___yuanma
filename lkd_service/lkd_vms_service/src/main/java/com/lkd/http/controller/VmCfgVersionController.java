@@ -2,6 +2,7 @@ package com.lkd.http.controller;
 import com.lkd.entity.VmCfgVersionEntity;
 import com.lkd.service.VmCfgVersionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public class VmCfgVersionController {
 
     @Autowired
+    @Lazy
     private VmCfgVersionService vmCfgVersionService;
 
     /**

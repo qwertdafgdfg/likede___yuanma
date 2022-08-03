@@ -6,6 +6,7 @@ import com.lkd.http.viewModel.NodeReq;
 import com.lkd.service.NodeService;
 import com.lkd.viewmodel.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
 public class NodeController {
 
     @Autowired
+    @Lazy
     private NodeService nodeService;
 
 

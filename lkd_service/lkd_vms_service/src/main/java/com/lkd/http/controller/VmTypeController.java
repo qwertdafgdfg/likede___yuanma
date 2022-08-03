@@ -4,6 +4,7 @@ import com.lkd.entity.VmTypeEntity;
 import com.lkd.service.VmTypeService;
 import com.lkd.viewmodel.Pager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 public class VmTypeController {
 
     @Autowired
+    @Lazy
     private VmTypeService vmTypeService;
 
     /**

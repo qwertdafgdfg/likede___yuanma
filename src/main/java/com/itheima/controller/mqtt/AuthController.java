@@ -14,7 +14,7 @@ import javax.annotation.PostConstruct;
 import java.util.HashMap;
 
 /**
- * Created by 传智播客*黑马程序员.
+
  */
 @RestController
 @RequestMapping("/mqtt")
