@@ -51,7 +51,7 @@ public class TaskController extends  BaseController{
      */
     @PostMapping("/create")
     public boolean create(@RequestBody TaskViewModel task) throws LogicException {
-        task.setUserId( getUserId() );//设置当前登录用户id
+        task.setUserId( super.getUserId() );//设置当前登录用户id
         return taskService.createTask(task);
     }
 

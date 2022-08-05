@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.servlet.http.HttpServletRequest;
 /**
  * controller父类
+ * @author 61941
  */
 public class BaseController {
 

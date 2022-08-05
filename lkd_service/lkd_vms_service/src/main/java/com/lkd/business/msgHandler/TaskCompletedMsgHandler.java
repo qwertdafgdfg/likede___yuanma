@@ -8,6 +8,7 @@ import com.lkd.contract.TaskCompleteContract;
 import com.lkd.service.VendingMachineService;
 import com.lkd.utils.JsonUtil;
 import com.lkd.viewmodel.VMDistance;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -20,6 +21,7 @@ import java.io.IOException;
  */
 @Component
 @ProcessType("taskCompleted")
+@Slf4j
 public class TaskCompletedMsgHandler implements MsgHandler {
 
     @Autowired
@@ -29,6 +31,9 @@ public class TaskCompletedMsgHandler implements MsgHandler {
 
     @Override
     public void process(String jsonMsg) throws IOException {
+        System.out.println("");
+        //{"innerCode":"01000002","msgType":"taskCompleted",  "taskType":4}
+        log.info("--------------因为我这个服务订阅了某个topis接受到的消息为：---------------"+jsonMsg);
         TaskCompleteContract taskCompleteContract= JsonUtil.getByJson(jsonMsg, TaskCompleteContract.class );
         if(taskCompleteContract==null || Strings.isNullOrEmpty(taskCompleteContract.getInnerCode())  ) return;
 
@@ -37,6 +42,7 @@ public class TaskCompletedMsgHandler implements MsgHandler {
             vmService.updateStatus(  taskCompleteContract.getInnerCode(), VMSystem.VM_STATUS_RUNNING   );
             //todo :保存设备的坐标（数据库+es）
             var vmDistance=new VMDistance();
+            log.info(taskCompleteContract+"-----"+vmDistance);
             BeanUtils.copyProperties( taskCompleteContract,vmDistance );
             vmService.setVMDistance(vmDistance );
         }

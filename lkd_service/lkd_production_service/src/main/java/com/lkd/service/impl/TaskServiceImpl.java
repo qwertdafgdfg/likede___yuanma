@@ -212,6 +212,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskDao,TaskEntity> implements 
             roleCode="1003";
         }
 
+        //每一天有一个唯一的key。。yyyyMMdd
         String key= VMSystem.REGION_TASK_KEY_PREF
                 + LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
                 +"."+ regionId+"."+roleCode;
@@ -220,6 +221,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskDao,TaskEntity> implements 
         if(set==null || set.isEmpty()){
             throw  new LogicException("该区域暂时没有相关人员");
         }
+        //如果有相等的，就拿出集合里面的第一个元素。
         return (Integer) set.stream().collect( Collectors.toList()).get(0);
     }
 
@@ -290,6 +292,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskDao,TaskEntity> implements 
 
         //获取用户完成工单数
         var workCountFuture= CompletableFuture.supplyAsync( ()-> this.getCountByUserId(userId,VMSystem.TASK_STATUS_FINISH,start,end))
+                //r是结果，e是异常信息。   不用lambda表达式，这里应该是个重写的方法。（https://blog.csdn.net/winterking3/article/details/116477522）
                 .whenComplete( (r,e)->{
                     if(e!=null){
                         userWork.setWorkCount(0);
@@ -553,7 +556,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskDao,TaskEntity> implements 
                 + LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
                 +"."+ taskEntity.getRegionId()+"."+roleCode;
         redisTemplate.opsForZSet().incrementScore(key, taskEntity.getAssignorId(),score);
-
     }
 
 

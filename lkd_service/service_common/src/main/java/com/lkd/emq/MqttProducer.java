@@ -29,6 +29,14 @@ public class MqttProducer {
         this.send(defaultTopic, payload);
     }
 
+    /**
+     *功能描述
+     * @author liYuan
+     * @date 2022/8/3 15:14
+      * @param topic       主题的名字。需要被订阅才能接受到信息。
+     * @param payload
+     * @return void
+     */
     public void send(String topic, String payload) {
         this.send(topic, defaultProducerQos, payload);
     }

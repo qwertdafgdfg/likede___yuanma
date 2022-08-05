@@ -32,6 +32,13 @@ public class MqttCallback implements MqttCallbackExtended {
         mqttClient.messageArrivedComplete(message.getId(),message.getQos());
     }
 
+    /**
+     *功能描述  消息发送成功后，回调该方法，判断是否发送成功。
+     * @author liYuan
+     * @date 2022/8/3 15:17
+      * @param iMqttDeliveryToken
+     * @return void
+     */
     @Override
     public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
         log.info("deliveryComplete---------" + iMqttDeliveryToken.isComplete());
