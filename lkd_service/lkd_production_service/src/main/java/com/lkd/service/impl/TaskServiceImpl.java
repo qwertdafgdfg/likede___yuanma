@@ -292,7 +292,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskDao,TaskEntity> implements 
 
         //获取用户完成工单数
         var workCountFuture= CompletableFuture.supplyAsync( ()-> this.getCountByUserId(userId,VMSystem.TASK_STATUS_FINISH,start,end))
-                //r是结果，e是异常信息。   不用lambda表达式，这里应该是个重写的方法。（https://blog.csdn.net/winterking3/article/details/116477522）
+                //r是结果，e是异常信息。   不用lambda表达式，这里应该是个重写的方法。。。（https://blog.csdn.net/winterking3/article/details/116477522）
+                //CompletableFuture详解 (https://blog.csdn.net/wumingdu1234/article/details/123947273)
+                //
                 .whenComplete( (r,e)->{
                     if(e!=null){
                         userWork.setWorkCount(0);

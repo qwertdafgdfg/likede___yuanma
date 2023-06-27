@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: user-service
+
+server:
+  port: 9006
+xxl:
+  job:
+    accessToken:
+    admin:
+      addresses: http://172.16.43.155:8080/xxl-job-admin
+
+    executor:
+      appname: vm-service
+      address:
+      ip:
+      port: 9980
+      logretentiondays: 30
